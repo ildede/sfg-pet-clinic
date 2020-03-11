@@ -2,9 +2,11 @@ package cloud.happydev.sfgpetclinic.services.map;
 
 import cloud.happydev.sfgpetclinic.model.Owner;
 import cloud.happydev.sfgpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
