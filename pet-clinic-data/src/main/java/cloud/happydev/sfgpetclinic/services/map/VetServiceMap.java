@@ -1,11 +1,11 @@
 package cloud.happydev.sfgpetclinic.services.map;
 
 import cloud.happydev.sfgpetclinic.model.Vet;
-import cloud.happydev.sfgpetclinic.services.CrudService;
+import cloud.happydev.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
