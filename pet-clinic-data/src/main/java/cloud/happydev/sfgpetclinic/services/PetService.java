@@ -1,5 +1,6 @@
 package cloud.happydev.sfgpetclinic.services;
 
-public interface PetService extends CrudService<PetService, Long> {
+import cloud.happydev.sfgpetclinic.model.Pet;
 
+public interface PetService extends CrudService<Pet, Long> {
 }
