@@ -1,12 +1,21 @@
 package cloud.happydev.sfgpetclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity {
 
+    @Column(name = "date")
     private LocalDate date;
+
+    @Column(name = "description")
     private String description;
-    private Pet per;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
+    private Pet pet;
 
     public LocalDate getDate() {
         return date;
@@ -24,11 +33,11 @@ public class Visit extends BaseEntity {
         this.description = description;
     }
 
-    public Pet getPer() {
-        return per;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPer(Pet per) {
-        this.per = per;
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 }
