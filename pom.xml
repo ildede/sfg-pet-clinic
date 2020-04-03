@@ -46,6 +46,6 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:ildede/sfg-pet-clinic.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 </project>
