@@ -1,10 +1,7 @@
 package cloud.happydev.sfgpetclinic.bootstrap;
 
 import cloud.happydev.sfgpetclinic.model.*;
-import cloud.happydev.sfgpetclinic.services.OwnerService;
-import cloud.happydev.sfgpetclinic.services.PetTypeService;
-import cloud.happydev.sfgpetclinic.services.SpecialtyService;
-import cloud.happydev.sfgpetclinic.services.VetService;
+import cloud.happydev.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,14 +12,16 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
-    private PetTypeService petTypeService;
-    private SpecialtyService specialtyService;
+    private final PetTypeService petTypeService;
+    private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -88,6 +87,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
