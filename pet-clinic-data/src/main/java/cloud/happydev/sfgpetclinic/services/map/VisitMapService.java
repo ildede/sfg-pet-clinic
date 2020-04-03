@@ -2,11 +2,13 @@ package cloud.happydev.sfgpetclinic.services.map;
 
 import cloud.happydev.sfgpetclinic.model.Visit;
 import cloud.happydev.sfgpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
