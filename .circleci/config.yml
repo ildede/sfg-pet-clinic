@@ -3,5 +3,6 @@ orbs:
   maven: circleci/maven@1.0.0
 workflows:
   maven_with_cache:
-    jobs:
-      - maven/test
+    maven_command: mvn compile
+    steps:
+      - run: mvn compile
