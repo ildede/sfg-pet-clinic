@@ -4,4 +4,4 @@ orbs:
 workflows:
   maven_with_cache:
     jobs:
-      - mvn compile
+      - maven/with_cache
