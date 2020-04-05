@@ -6,5 +6,3 @@ workflows:
     jobs:
       - maven/test:
           maven_command: mvn compile
-          steps:
-            - run: mvn compile
